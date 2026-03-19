@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goodwill Crew</title>
+  <meta name="description" content="Invitation page for Goodwill Crew app testers." />
+  <style>
+    :root {
+      --bg1: #0f172a;
+      --bg2: #1e293b;
+      --card: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #22c55e;
+      --accent-hover: #16a34a;
+      --border: rgba(255, 255, 255, 0.15);
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #334155 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #14532d 0%, transparent 30%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .language-bar {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 20px 16px 8px;
+    }
+
+    .flag-btn {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 14px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+      min-width: 52px;
+    }
+
+    .flag-btn:hover,
+    .flag-btn:focus-visible {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.3);
+      outline: none;
+    }
+
+    .flag-btn.active {
+      background: rgba(34, 197, 94, 0.22);
+      border-color: rgba(34, 197, 94, 0.6);
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+    }
+
+    .wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px 40px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 860px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 28px;
+      padding: 36px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.14);
+      color: #dcfce7;
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.15;
+    }
+
+    p {
+      margin: 0 0 16px;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 16px;
+      font-weight: 700;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #052e16;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: not-allowed;
+      opacity: 0.8;
+    }
+
+    .note {
+      margin-top: 22px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    footer {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.9rem;
+      padding: 0 16px 24px;
+    }
+
+    @media (max-width: 640px) {
+      .card {
+        padding: 28px 20px;
+        border-radius: 22px;
+      }
+
+      .flag-btn {
+        min-width: 48px;
+        padding: 9px 10px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="language-bar" aria-label="Language selector">
+    <button class="flag-btn active" data-lang="en" title="English" aria-label="English">🇺🇸</button>
+    <button class="flag-btn" data-lang="es" title="Español" aria-label="Español">🇪🇸</button>
+    <button class="flag-btn" data-lang="zh" title="中文" aria-label="中文">🇨🇳</button>
+    <button class="flag-btn" data-lang="fr" title="Français" aria-label="Français">🇫🇷</button>
+    <button class="flag-btn" data-lang="de" title="Deutsch" aria-label="Deutsch">🇩🇪</button>
+    <button class="flag-btn" data-lang="ja" title="日本語" aria-label="日本語">🇯🇵</button>
+    <button class="flag-btn" data-lang="uk" title="Українська" aria-label="Українська">🇺🇦</button>
+    <button class="flag-btn" data-lang="ru" title="Русский" aria-label="Русский">🇷🇺</button>
+  </div>
+
+  <main class="wrapper">
+    <section class="card">
+      <div class="badge" id="badge"></div>
+      <h1 id="title"></h1>
+      <p id="intro"></p>
+      <p id="groupText"></p>
+
+      <div class="actions">
+        <a
+          class="btn btn-primary"
+          id="groupLink"
+          href="https://groups.google.com/g/goodwillcrew"
+          target="_blank"
+          rel="noopener noreferrer"
+        ></a>
+
+        <!-- Replace # below with the real test app URL when ready -->
+        <a
+          class="btn btn-secondary"
+          id="appLink"
+          href="#"
+          aria-disabled="true"
+          onclick="return false;"
+        ></a>
+      </div>
+
+      <div class="note" id="note"></div>
+    </section>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    const translations = {
+      en: {
+        lang: 'en',
+        badge: 'Goodwill Crew',
+        title: 'Welcome, and thank you for participating!',
+        intro: 'We truly appreciate your interest and support. Your participation helps us improve the app and make it better for everyone.',
+        groupText: 'You are invited to join our Google Group for testing a paid application with a subscription cost of $1.',
+        groupLink: 'Join the Google Group',
+        appLink: 'Test app link coming soon',
+        note: 'The application testing link will be added later on this page.',
+        footer: 'Thank you for your support!'
+      },
+      es: {
+        lang: 'es',
+        badge: 'Goodwill Crew',
+        title: '¡Bienvenido y gracias por participar!',
+        intro: 'Agradecemos sinceramente su interés y apoyo. Su participación nos ayuda a mejorar la aplicación y hacerla mejor para todos.',
+        groupText: 'Le invitamos a unirse a nuestro Grupo de Google para probar una aplicación de pago con una suscripción de $1.',
+        groupLink: 'Unirse al Grupo de Google',
+        appLink: 'Enlace de prueba de la app próximamente',
+        note: 'El enlace para probar la aplicación se añadirá más adelante en esta página.',
+        footer: '¡Gracias por su apoyo!'
+      },
+      zh: {
+        lang: 'zh-CN',
+        badge: 'Goodwill Crew',
+        title: '欢迎，感谢您的参与！',
+        intro: '非常感谢您的关注与支持。您的参与将帮助我们改进这款应用，让它变得更好。',
+        groupText: '诚邀您加入我们的 Google 群组，参与一款订阅费用为 1 美元的付费应用测试。',
+        groupLink: '加入 Google 群组',
+        appLink: '测试应用链接即将添加',
+        note: '应用测试链接稍后会添加到此页面。',
+        footer: '感谢您的支持！'
+      },
+      fr: {
+        lang: 'fr',
+        badge: 'Goodwill Crew',
+        title: 'Bienvenue, et merci de participer !',
+        intro: 'Nous apprécions sincèrement votre intérêt et votre soutien. Votre participation nous aide à améliorer l’application pour tout le monde.',
+        groupText: 'Nous vous invitons à rejoindre notre groupe Google pour tester une application payante avec un abonnement de 1 $.',
+        groupLink: 'Rejoindre le groupe Google',
+        appLink: 'Lien de test de l’application à venir',
+        note: 'Le lien de test de l’application sera ajouté plus tard sur cette page.',
+        footer: 'Merci pour votre soutien !'
+      },
+      de: {
+        lang: 'de',
+        badge: 'Goodwill Crew',
+        title: 'Willkommen und vielen Dank für Ihre Teilnahme!',
+        intro: 'Wir schätzen Ihr Interesse und Ihre Unterstützung sehr. Ihre Teilnahme hilft uns, die App zu verbessern und für alle besser zu machen.',
+        groupText: 'Wir laden Sie ein, unserer Google-Gruppe beizutreten, um eine kostenpflichtige App mit einem Abonnementpreis von 1 $ zu testen.',
+        groupLink: 'Der Google-Gruppe beitreten',
+        appLink: 'Test-App-Link folgt bald',
+        note: 'Der Link zur Testanwendung wird später auf dieser Seite hinzugefügt.',
+        footer: 'Vielen Dank für Ihre Unterstützung!'
+      },
+      ja: {
+        lang: 'ja',
+        badge: 'Goodwill Crew',
+        title: 'ご参加いただき、ありがとうございます！',
+        intro: 'ご関心とご支援に心より感謝いたします。皆さまのご参加は、アプリの改善に大いに役立ちます。',
+        groupText: '月額 1 ドルの有料アプリをテストしていただくため、Google グループへのご参加をお願いいたします。',
+        groupLink: 'Google グループに参加する',
+        appLink: 'テスト用アプリのリンクは近日追加予定',
+        note: 'アプリのテストリンクは後ほどこのページに追加されます。',
+        footer: 'ご協力ありがとうございます！'
+      },
+      uk: {
+        lang: 'uk',
+        badge: 'Goodwill Crew',
+        title: 'Вітаємо та дякуємо за участь!',
+        intro: 'Ми щиро цінуємо ваш інтерес і підтримку. Ваша участь допомагає нам покращувати застосунок і робити його кращим для всіх.',
+        groupText: 'Запрошуємо вас приєднатися до нашої Google-групи для тестування платного застосунку з вартістю підписки 1 $.',
+        groupLink: 'Приєднатися до Google-групи',
+        appLink: 'Посилання на тестовий застосунок скоро з’явиться',
+        note: 'Посилання для тестування застосунку буде додано пізніше на цій сторінці.',
+        footer: 'Дякуємо за підтримку!'
+      },
+      ru: {
+        lang: 'ru',
+        badge: 'Goodwill Crew',
+        title: 'Здравствуйте и спасибо за участие!',
+        intro: 'Мы искренне ценим ваш интерес и поддержку. Ваше участие помогает нам улучшать приложение и делать его лучше для всех.',
+        groupText: 'Приглашаем вас присоединиться к нашей Google-группе для тестирования платного приложения со стоимостью подписки 1 $.',
+        groupLink: 'Присоединиться к Google-группе',
+        appLink: 'Ссылка на приложение для тестирования скоро появится',
+        note: 'Ссылка на приложение для тестирования будет добавлена позже на этой странице.',
+        footer: 'Спасибо за вашу поддержку!'
+      }
+    };
+
+    const elements = {
+      badge: document.getElementById('badge'),
+      title: document.getElementById('title'),
+      intro: document.getElementById('intro'),
+      groupText: document.getElementById('groupText'),
+      groupLink: document.getElementById('groupLink'),
+      appLink: document.getElementById('appLink'),
+      note: document.getElementById('note'),
+      footer: document.getElementById('footer')
+    };
+
+    const buttons = document.querySelectorAll('.flag-btn');
+
+    function setLanguage(lang) {
+      const t = translations[lang] || translations.en;
+      document.documentElement.lang = t.lang;
+      elements.badge.textContent = t.badge;
+      elements.title.textContent = t.title;
+      elements.intro.textContent = t.intro;
+      elements.groupText.textContent = t.groupText;
+      elements.groupLink.textContent = t.groupLink;
+      elements.appLink.textContent = t.appLink;
+      elements.note.textContent = t.note;
+      elements.footer.textContent = t.footer;
+
+      buttons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      localStorage.setItem('goodwillLang', lang);
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+
+    const savedLang = localStorage.getItem('goodwillLang');
+    setLanguage(savedLang && translations[savedLang] ? savedLang : 'en');
+  </script>
+</body>
+</html>
