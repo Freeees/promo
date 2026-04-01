@@ -324,16 +324,8 @@
       <div class="actions">
         <a
           id="groupLink"
-          class="btn btn-primary"
-          href="https://groups.google.com/g/goodwillcrew"
-          target="_blank"
-          rel="noopener noreferrer"
-        ></a>
-
-        <a
-          id="supportLink"
           class="btn btn-secondary"
-          href="https://gofund.me/dc023a039"
+          href="https://groups.google.com/g/goodwillcrew"
           target="_blank"
           rel="noopener noreferrer"
         ></a>
@@ -342,6 +334,14 @@
           id="appLink"
           class="btn btn-secondary"
           href="https://play.google.com/store/apps/details?id=com.lingobridge.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        ></a>
+
+        <a
+          id="supportLink"
+          class="btn btn-primary"
+          href="https://gofund.me/dc023a039"
           target="_blank"
           rel="noopener noreferrer"
         ></a>
@@ -459,8 +459,8 @@
       intro: document.getElementById("intro"),
       groupText: document.getElementById("groupText"),
       groupLink: document.getElementById("groupLink"),
-      supportLink: document.getElementById("supportLink"),
       appLink: document.getElementById("appLink"),
+      supportLink: document.getElementById("supportLink"),
       note: document.getElementById("note"),
       footer: document.getElementById("footer")
     };
@@ -476,8 +476,8 @@
       elements.intro.textContent = t.intro;
       elements.groupText.textContent = t.groupText;
       elements.groupLink.textContent = t.groupLink;
-      elements.supportLink.textContent = t.supportLink;
       elements.appLink.textContent = t.appLink;
+      elements.supportLink.textContent = t.supportLink;
       elements.note.textContent = t.note;
       elements.footer.textContent = t.footer;
 
