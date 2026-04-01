@@ -331,6 +331,14 @@
         ></a>
 
         <a
+          id="supportLink"
+          class="btn btn-secondary"
+          href="https://gofund.me/dc023a039"
+          target="_blank"
+          rel="noopener noreferrer"
+        ></a>
+
+        <a
           id="appLink"
           class="btn btn-secondary"
           href="https://play.google.com/store/apps/details?id=com.lingobridge.app"
@@ -354,6 +362,7 @@
         intro: "We truly appreciate your interest and support. Your participation helps us improve the app and make it better for everyone.",
         groupText: "You are invited to join our Google Group for testing a paid application with a subscription cost of $5.",
         groupLink: "Join the tester group",
+        supportLink: "Support us",
         appLink: "Open the app in Google Play",
         note: "First, please join the Google Group. After that, open the app page in Google Play.",
         footer: "Thank you for your support!"
@@ -365,6 +374,7 @@
         intro: "Agradecemos sinceramente su interés y apoyo. Su participación nos ayuda a mejorar la aplicación y hacerla mejor para todos.",
         groupText: "Le invitamos a unirse a nuestro Grupo de Google para probar una aplicación de pago con una suscripción de $5.",
         groupLink: "Unirse al grupo de testers",
+        supportLink: "Apóyanos",
         appLink: "Abrir la app en Google Play",
         note: "Primero, únase al Grupo de Google. Después, abra la página de la aplicación en Google Play.",
         footer: "¡Gracias por su apoyo!"
@@ -376,6 +386,7 @@
         intro: "非常感谢您的关注与支持。您的参与将帮助我们改进这款应用，让它变得更好。",
         groupText: "诚邀您加入我们的 Google 群组，参与一款订阅费用为 5 美元的付费应用测试。",
         groupLink: "加入测试群组",
+        supportLink: "支持我们",
         appLink: "在 Google Play 打开应用",
         note: "请先加入 Google 群组，然后在 Google Play 中打开应用页面。",
         footer: "感谢您的支持！"
@@ -387,6 +398,7 @@
         intro: "Nous apprécions sincèrement votre intérêt et votre soutien. Votre participation nous aide à améliorer l’application pour tout le monde.",
         groupText: "Nous vous invitons à rejoindre notre groupe Google pour tester une application payante avec un abonnement de 5 $.",
         groupLink: "Rejoindre le groupe de testeurs",
+        supportLink: "Soutenez-nous",
         appLink: "Ouvrir l’application dans Google Play",
         note: "Veuillez d’abord rejoindre le groupe Google, puis ouvrir la page de l’application dans Google Play.",
         footer: "Merci pour votre soutien !"
@@ -398,6 +410,7 @@
         intro: "Wir schätzen Ihr Interesse und Ihre Unterstützung sehr. Ihre Teilnahme hilft uns, die App zu verbessern und für alle besser zu machen.",
         groupText: "Wir laden Sie ein, unserer Google-Gruppe beizutreten, um eine kostenpflichtige App mit einem Abonnementpreis von 5 $ zu testen.",
         groupLink: "Der Testergruppe beitreten",
+        supportLink: "Unterstützen Sie uns",
         appLink: "App in Google Play öffnen",
         note: "Bitte treten Sie zuerst der Google-Gruppe bei und öffnen Sie danach die App-Seite in Google Play.",
         footer: "Vielen Dank für Ihre Unterstützung!"
@@ -409,6 +422,7 @@
         intro: "ご関心とご支援に心より感謝いたします。皆さまのご参加は、アプリの改善に大いに役立ちます。",
         groupText: "月額 5 ドルの有料アプリをテストしていただくため、Google グループへのご参加をお願いいたします。",
         groupLink: "テスターグループに参加する",
+        supportLink: "私たちを支援する",
         appLink: "Google Play でアプリを開く",
         note: "まず Google グループに参加し、その後 Google Play のアプリページを開いてください。",
         footer: "ご協力ありがとうございます！"
@@ -420,6 +434,7 @@
         intro: "Ми щиро цінуємо ваш інтерес і підтримку. Ваша участь допомагає нам покращувати застосунок і робити його кращим для всіх.",
         groupText: "Запрошуємо вас приєднатися до нашої Google-групи для тестування платного застосунку з вартістю підписки 5 $.",
         groupLink: "Приєднатися до групи тестувальників",
+        supportLink: "Підтримайте нас",
         appLink: "Відкрити застосунок у Google Play",
         note: "Спочатку приєднайтеся до Google-групи, а потім відкрийте сторінку застосунку в Google Play.",
         footer: "Дякуємо за підтримку!"
@@ -431,6 +446,7 @@
         intro: "Мы искренне ценим ваш интерес и поддержку. Ваше участие помогает нам улучшать приложение и делать его лучше для всех.",
         groupText: "Приглашаем вас присоединиться к нашей Google-группе для тестирования платного приложения со стоимостью подписки $5.",
         groupLink: "Вступить в группу тестировщиков",
+        supportLink: "Поддержите нас",
         appLink: "Открыть приложение в Google Play",
         note: "Сначала вступите в Google-группу, а затем откройте страницу приложения в Google Play.",
         footer: "Спасибо за вашу поддержку!"
@@ -443,6 +459,7 @@
       intro: document.getElementById("intro"),
       groupText: document.getElementById("groupText"),
       groupLink: document.getElementById("groupLink"),
+      supportLink: document.getElementById("supportLink"),
       appLink: document.getElementById("appLink"),
       note: document.getElementById("note"),
       footer: document.getElementById("footer")
@@ -459,6 +476,7 @@
       elements.intro.textContent = t.intro;
       elements.groupText.textContent = t.groupText;
       elements.groupLink.textContent = t.groupLink;
+      elements.supportLink.textContent = t.supportLink;
       elements.appLink.textContent = t.appLink;
       elements.note.textContent = t.note;
       elements.footer.textContent = t.footer;
